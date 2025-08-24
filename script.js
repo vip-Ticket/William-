@@ -42,7 +42,7 @@ function selectPaymentMethod(method) {
   const email = localStorage.getItem("userEmail");
   const phone = localStorage.getItem("userPhone");
 
-  const subject = `Payment Request for ${plan} Plan via ${method}`;
+  const subject = Payment Request for ${plan} Plan via ${method};
   const body = `Hello William Bradley Pitt Management,%0D%0A%0D%0A
 I would like to subscribe to the ${plan} Fan Card plan.%0D%0A
 Name: ${name}%0D%0A
@@ -51,7 +51,10 @@ Phone: ${phone}%0D%0A
 Preferred Payment Method: ${method}%0D%0A
 Please send me the payment details.%0D%0A%0D%0A
 Thank you.`;
-`
-  window.location.href = https://mail.google.com/mail/?view=cm&fs=1&to=managementbooking887@gmail.com&su=${subject}&body=${body}`;
+
+  // ✅ Properly wrap URL in quotes and encode subject & body
+  window.location.href =
+    `https://mail.google.com/mail/?view=cm&fs=1&to=managementbooking887@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
+
 
