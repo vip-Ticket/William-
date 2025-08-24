@@ -35,14 +35,15 @@ if (window.location.pathname.includes("payment.html")) {
   });
 }
 
-// Payment method selection → Open Gmail with full message
+// Payment method selection → Open default mail client
 function selectPaymentMethod(method) {
   const plan = localStorage.getItem("selectedPlan");
   const name = localStorage.getItem("userName");
   const email = localStorage.getItem("userEmail");
   const phone = localStorage.getItem("userPhone");
 
-  const subject = `Payment Request for ${plan} Plan via ${method}`;
+  // Email subject and body
+  const subject = Payment Request for ${plan} Plan via ${method};
   const body = `Hello William Bradley Pitt Management,%0D%0A%0D%0A
 I would like to subscribe to the ${plan} Fan Card plan.%0D%0A
 Name: ${name}%0D%0A
@@ -52,10 +53,6 @@ Preferred Payment Method: ${method}%0D%0A
 Please send me the payment details.%0D%0A%0D%0A
 Thank you.`;
 
-  // ✅ Properly wrap URL in quotes and encode subject & body
-  window.location.href =
-    `https://mail.google.com/mail/?view=cm&fs=1&to=managementbooking887@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // Open default email app
+  window.location.href = mailto:managementbooking887@gmail.com?subject=${subject}&body=${body};
 }
-
-
-
