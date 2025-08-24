@@ -43,7 +43,7 @@ function selectPaymentMethod(method) {
   const phone = localStorage.getItem("userPhone");
 
   // Email subject and body
-  const subject = Payment Request for ${plan} Plan via ${method};
+  const subject = `Payment Request for ${plan} Plan via ${method}`;
   const body = `Hello William Bradley Pitt Management,%0D%0A%0D%0A
 I would like to subscribe to the ${plan} Fan Card plan.%0D%0A
 Name: ${name}%0D%0A
@@ -54,5 +54,6 @@ Please send me the payment details.%0D%0A%0D%0A
 Thank you.`;
 
   // Open default email app
-  window.location.href = mailto:managementbooking887@gmail.com?subject=${subject}&body=${body};
+  window.location.href = `mailto:managementbooking887@gmail.com?subject=${subject}&body=${body}`;
 }
+
